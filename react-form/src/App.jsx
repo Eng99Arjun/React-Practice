@@ -64,6 +64,40 @@ const App = () => {
         <input type="file" name="resume" id="resume" className='outline w-xl p-1 rounded-xl '/>
       </div>
 
+      {/* URL */}
+
+      <Input type='link' fieldname='URL' />
+
+      {/* Choice */}
+
+    <div className='m-2'>
+      <div>
+        Select Your Choice
+      </div>
+      <select name="choice"       id="choice" className='w-xl outline rounded-xl p-1'>
+        <option value="opt 1">Opt 1</option>
+        <option value="opt 1">Opt 3</option>
+        <option value="opt 1">Opt 4</option>
+        <option value="opt 1">Opt 5</option>
+      </select>
+    </div>
+
+    {/* About Yourself */}
+      
+    <div className='m-2'>
+      <div>About</div>
+      <textarea name="about" id="about" className='w-xl rounded-xl outline '></textarea>
+    </div>
+
+    <div className='flex flex-row m-2 justify-between'>
+      <div> 
+        <button className='w-36 rounded-2xl bg-green-500 p-1.5'>Reset</button>
+      </div>
+      <div> 
+        <button className='w-36 rounded-2xl bg-green-500 p-1.5'>Submit</button>
+      </div>
+    </div>
+
     </div>
   )
 }
