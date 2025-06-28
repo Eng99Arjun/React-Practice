@@ -1,27 +1,61 @@
 import React from 'react'
 
-const Input = (props) => {
-  return <div className='m-2'>
-    <div>
-      <label htmlFor={props.fieldname}>{`${props.fieldname}`}</label>
-    </div>
-    <div>
-      <input type={props.type} placeholder={`Enter ${props.fieldname}`} className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
-    </div>
-    
-  </div>
-}
-
 const App = () => {
+
+
+
+
   return (
     <div className='m-auto mt-10 shadow-2xl h-1/2 w-fit p-5 rounded-3xl '>
       <h1 className='text-2xl font-bold text-green-500 text-center'>
         Form in React
       </h1>
-      <Input type='text' fieldname= 'First Name ' />
-      <Input type='text' fieldname= 'Last Name' />
-      <Input type='email' fieldname= 'Email' />
-      <Input type='number' fieldname= 'Contact' />
+      
+      <div className='m-2'>
+        <div>
+          <label htmlFor=''>First Name</label>
+        </div>
+        <div>
+          <input type='text' placeholder='Enter First Name' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+        </div>
+        
+      </div>
+      
+
+      <div className='m-2'>
+        <div>
+          <label htmlFor=''>Last Name</label>
+        </div>
+        <div>
+          <input type='text' placeholder='Enter Last Name' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+        </div>
+        
+      </div>
+      
+
+      <div className='m-2'>
+        <div>
+          <label htmlFor=''>Email</label>
+        </div>
+        <div>
+          <input type='email' placeholder='Enter email' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+        </div>
+        
+      </div>
+      
+
+      <div className='m-2'>
+        <div>
+          <label htmlFor=''>Contact</label>
+        </div>
+        <div>
+          <input type='Number' placeholder='Enter Contact' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+        </div>
+        
+      </div>
+      
+
+
       <div className='m-2'>
         <div>
           <label htmlFor="Gender"> Gender</label>
@@ -66,7 +100,7 @@ const App = () => {
 
       {/* URL */}
 
-      <Input type='link' fieldname='URL' />
+      <input type='link' placeholder='URL' />
 
       {/* Choice */}
 
