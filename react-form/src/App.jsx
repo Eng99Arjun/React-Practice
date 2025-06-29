@@ -65,7 +65,10 @@ const App = () => {
           type='text' 
           placeholder='Enter Last Name' 
           className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
-          
+          value = {lastName}
+          onChange= {(e) => {
+            setLastName(e.target.value);
+          }}
         </div>
         
       </div>
@@ -76,7 +79,14 @@ const App = () => {
           <label htmlFor=''>Email</label>
         </div>
         <div>
-          <input type='email' placeholder='Enter email' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          <input 
+          type='email' 
+          placeholder='Enter email' 
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          value= {email}
+          onChange= {(e) => {
+            setEmail(e.target.value);
+          }}
         </div>
         
       </div>
@@ -87,7 +97,14 @@ const App = () => {
           <label htmlFor=''>Contact</label>
         </div>
         <div>
-          <input type='Number' placeholder='Enter Contact' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          <input 
+          type='Number' 
+          placeholder='Enter Contact' 
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          value= {contact}
+          onChange = { (e) => {
+            setContact(e.target.value);
+          }}
         </div>
         
       </div>
@@ -100,13 +117,41 @@ const App = () => {
         </div>
         <div>
           <span className='m-3'>
-            <input type="radio" name="gender" id="male" /> Male      
+            <input 
+            type="radio" 
+            name="gender" 
+            id="male"
+            value='male'
+            checked={gender === 'male'}
+            onChange={(e) => {
+              setGender(e.target.value)
+            }}
+            /> 
+            Male      
           </span>
           <span className='m-3'>
-            <input type="radio" name="gender" id="female" /> Female     
+            <input 
+            type="radio" 
+            name="gender" 
+            id="female" 
+            value='female'
+            checked={gender === 'female'}
+            onChange={(e) => {
+              setGender(e.target.value);
+            }}
+            /> 
+            Female     
           </span>
           <span>
-            <input type="radio" name="gender" id="other" /> Other     
+            <input 
+            type="radio" 
+            name="gender" 
+            id="other"
+            value='other'
+            checked= {gender ==='other'}
+            onChange={(e) => {
+              setGender(e.target.value);
+            } } /> Other     
           </span>
         </div>
       </div>
