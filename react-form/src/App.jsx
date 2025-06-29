@@ -163,13 +163,37 @@ const App = () => {
         </div>
         <div>
           <span className='m-3'>
-            <input type="checkbox" name="subject" id="english" /> English      
+            <input 
+            type="checkbox" 
+            name="subject" 
+            id="english"
+            checked={subjects.english === true}
+            onChange={(e) => {
+              handleSubjectChange("english")
+            }}
+            /> English      
           </span>
           <span className='m-3'>
-            <input type="checkbox" name="subject" id="maths" /> Maths     
+            <input 
+            type="checkbox" 
+            name="subject" 
+            id="maths"
+            checked={subjects.maths === true}
+            onChange={(e) => {
+              handleSubjectChange("maths");
+            }}
+            /> Maths     
           </span>
           <span>
-            <input type="checkbox" name="subject" id="physics" /> Physics 
+            <input 
+            type="checkbox" 
+            name="subject" 
+            id="physics"
+            checked= {subjects.physics === true}
+            onChange={(e) => {
+              handleSubjectChange("physics")
+            }}
+            /> Physics 
           </span>
         </div>
       </div>
@@ -178,12 +202,29 @@ const App = () => {
 
       <div className='m-2'>
         <div>Upload Resume</div>
-        <input type="file" name="resume" id="resume" className='outline w-xl p-1 rounded-xl '/>
+        <input 
+        type="file" 
+        name="resume" 
+        id="resume" 
+        className='outline w-xl p-1 rounded-xl'
+        onChange={(e) => {
+          setResume(e.target.value);
+        }}
+        required
+        />
+        
       </div>
 
       {/* URL */}
 
-      <input type='link' placeholder='URL' />
+      <input type='link'
+       placeholder='URL'
+       id='url'
+       onChange={(e) => {
+        setUrl(e.target.value);
+       }}
+       required
+       />
 
       {/* Choice */}
 
@@ -199,7 +240,6 @@ const App = () => {
               setSelectedOption(e.target.value);
             }}
             className='outline w-xl p-1 rounded-xl' 
-
         >
             <option
                 value=""
@@ -232,7 +272,17 @@ const App = () => {
       
     <div className='m-2'>
       <div>About</div>
-      <textarea name="about" id="about" className='w-xl rounded-xl outline '></textarea>
+      <textarea 
+      name="about" 
+      id="about"
+      className='w-xl rounded-xl outline'
+      cols='30'
+      rows='10'
+      onChange={(e) => {
+        setAbout(e.target.value);
+      }}
+      required
+      ></textarea>
     </div>
 
     <div className='flex flex-row m-2 justify-between'>
