@@ -29,8 +29,28 @@ const App = () => {
   ))
   }
 
+  const handleSubmit = () =>{
+      console.table(firstName,lastName, email, contact, gender, selectedOption, subjects, resume,
+        url, about
+      );
+  }
 
-
+  const resetForm = () => {
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setContact("");
+        setGender("male");
+        setSubjects({
+            english: true,
+            maths: false,
+            physics: false,
+        });
+        setResume("");
+        setUrl("");
+        setSelectedOption("");
+        setAbout("");   
+  }
 
   return (
     <div className='m-auto mt-10 shadow-2xl h-1/2 w-fit p-5 rounded-3xl '>
@@ -46,11 +66,13 @@ const App = () => {
           <input 
           type='text' 
           placeholder='Enter First Name' 
-          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' 
           value ={firstName}
           onChange={(e) => {
             setFirstName(e.target.value)
-          }}
+          }}          
+          />
+
         </div>
         
       </div>
@@ -64,11 +86,13 @@ const App = () => {
           <input 
           type='text' 
           placeholder='Enter Last Name' 
-          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' 
           value = {lastName}
           onChange= {(e) => {
             setLastName(e.target.value);
-          }}
+          }}          
+          />
+
         </div>
         
       </div>
@@ -82,11 +106,12 @@ const App = () => {
           <input 
           type='email' 
           placeholder='Enter email' 
-          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' 
           value= {email}
           onChange= {(e) => {
             setEmail(e.target.value);
-          }}
+          }}          
+          />
         </div>
         
       </div>
@@ -100,11 +125,13 @@ const App = () => {
           <input 
           type='Number' 
           placeholder='Enter Contact' 
-          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' 
           value= {contact}
           onChange = { (e) => {
             setContact(e.target.value);
-          }}
+          }}          
+          />
+
         </div>
         
       </div>
@@ -287,10 +314,10 @@ const App = () => {
 
     <div className='flex flex-row m-2 justify-between'>
       <div> 
-        <button className='w-36 rounded-2xl bg-green-500 p-1.5'>Reset</button>
+        <button onClick={resetForm} className='w-36 rounded-2xl bg-green-500 p-1.5'>Reset</button>
       </div>
       <div> 
-        <button className='w-36 rounded-2xl bg-green-500 p-1.5'>Submit</button>
+        <button onClick={handleSubmit} className='w-36 rounded-2xl bg-green-500 p-1.5'>Submit</button>
       </div>
     </div>
 
