@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { use, useState } from 'react'
 
 const App = () => {
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  const [gender, setGender] = useState("male");
+  const [subjects, setSubjects] = useState({
+    english: true,
+    maths: false,
+    physics: false
+  });
+
+  const [url, setUrl] = useState("");
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const [resume, setResume] = useState("");
+
+  const [about, setAbout ] = useState("");
+
+
 
 
 
@@ -108,11 +129,36 @@ const App = () => {
       <div>
         Select Your Choice
       </div>
-      <select name="choice"       id="choice" className='w-xl outline rounded-xl p-1'>
-        <option value="opt 1">Opt 1</option>
-        <option value="opt 1">Opt 3</option>
-        <option value="opt 1">Opt 4</option>
-        <option value="opt 1">Opt 5</option>
+        <select
+            name="select"
+            id="select"
+            className='outline w-xl p-1 rounded-xl' 
+
+        >
+            <option
+                value=""
+                disabled
+                selected={selectedOption === ""}
+            >
+                Select your Ans
+            </option>
+            <optgroup label="Beginers">
+                <option value="1">HTML</option>
+                <option value="2">CSS</option>
+                <option value="3">
+                    JavaScript
+                </option>
+            </optgroup>
+            <optgroup label="Advance">
+                <option value="4">React</option>
+                <option value="5">Node</option>
+                <option value="6">
+                    Express
+                </option>
+                <option value="t">
+                    MongoDB
+                </option>
+            </optgroup>
       </select>
     </div>
 
