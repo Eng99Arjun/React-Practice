@@ -21,7 +21,13 @@ const App = () => {
 
   const [about, setAbout ] = useState("");
 
-
+  const handleSubjectChange = (sub) => {
+    setSubjects((prev) => ({
+      ...prev, 
+      [sub]: !prev[sub],
+    }
+  ))
+  }
 
 
 
@@ -37,7 +43,14 @@ const App = () => {
           <label htmlFor=''>First Name</label>
         </div>
         <div>
-          <input type='text' placeholder='Enter First Name' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          <input 
+          type='text' 
+          placeholder='Enter First Name' 
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          value ={firstName}
+          onChange={(e) => {
+            setFirstName(e.target.value)
+          }}
         </div>
         
       </div>
@@ -48,7 +61,11 @@ const App = () => {
           <label htmlFor=''>Last Name</label>
         </div>
         <div>
-          <input type='text' placeholder='Enter Last Name' className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          <input 
+          type='text' 
+          placeholder='Enter Last Name' 
+          className='outline-1 outline-gray-400 w-xl rounded-xl p-1' />
+          
         </div>
         
       </div>
@@ -132,6 +149,10 @@ const App = () => {
         <select
             name="select"
             id="select"
+            value={selectedOption}
+            onChange={(e) => {
+              setSelectedOption(e.target.value);
+            }}
             className='outline w-xl p-1 rounded-xl' 
 
         >
