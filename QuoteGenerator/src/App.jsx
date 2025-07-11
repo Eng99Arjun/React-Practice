@@ -4,21 +4,20 @@ function App() {
 
   const [quote, setQuote] = useState("");
 
-  useEffect(() => { 
-    const getQuote = async () => { 
-      try {
-        const res = await fetch("https://api.quotable.io/quotes/random?limit=1");
-        const data = await res.json();
-        setQuote(data[0]); // Get the first quote from the array
-      } catch (error) {
-        console.error('Error fetching quote:', error);
-      }
+  const handleSubmit = async() => {
+    try {
+      const res = await fetch("https://api.quotable.io/quotes/random?limit=1");
+      const data = await res.json();
+      setQuote(data[0]);
+
+    } catch (error) {
+        console.error(error)
     }
-    getQuote();
-  }, []);
+  }
 
   return (
     <div>
+      <button onClick={handleSubmit}>Change</button>
       <h2>Quote of the Visit</h2>
       {quote ? (
         <>
